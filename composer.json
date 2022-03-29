@@ -11,5 +11,7 @@
             "email": "baabouj.dev@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "baabouj/pexess": "^0.4.0"
+    }
 }
