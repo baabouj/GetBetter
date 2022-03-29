@@ -1,0 +1,15 @@
+{
+    "name": "omar/doctor-appointments",
+    "autoload": {
+        "psr-4": {
+            "app\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Omar Baabouj",
+            "email": "baabouj.dev@gmail.com"
+        }
+    ],
+    "require": {}
+}
