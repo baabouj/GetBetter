@@ -2,8 +2,12 @@
 
 $router = \Pexess\Pexess::Router();
 
-$router->route("/signup")->post([\app\controllers\UserController::class,"signup"]);
+$router->route("/signup")
+    ->post([\app\controllers\UserController::class, "signup"])
+    ->apply(\app\middlewares\SignUpMiddleware::class);
 
-$router->post("/login",[\app\controllers\UserController::class,"login"]);
+$router->route("/login")
+    ->post([\app\controllers\UserController::class, "login"])
+    ->apply(\app\middlewares\LoginMiddleware::class);
 
 return $router;
