@@ -10,4 +10,4 @@ $dotenv->load();
 require_once "src/app.php";
 
 // initializing the app
-$app->resolve();
+$app->init();
