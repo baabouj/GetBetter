@@ -6,11 +6,12 @@ use Pexess\Http\Response;
 
 $app = \Pexess\Pexess::Application();
 
-$app->group("/auth", require_once "src/routes/auth.php");
+$app->group("/auth", require_once ROOT_DIR . "/src/routes/auth.php");
+$app->group("/appointments", require_once ROOT_DIR . "/src/routes/appointments.php");
 
+$app->route("/user/appointments")->post([\app\controllers\AppointmentsController::class, "getUserAppointments"])->apply(\app\middlewares\AuthMiddleware::class);
 
 // Error Handling
-
 $app->handle(StatusCodes::NOT_FOUND, function (Request $req, Response $res) {
     $res->json([
         "success" => false,

@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\UserModel;
+use Pexess\Auth\JWT;
 use Pexess\Helpers\Hash;
 use Pexess\Helpers\StatusCodes;
 use Pexess\Http\Request;
@@ -21,19 +22,26 @@ class UserController
     public function signup(Request $req, Response $res)
     {
         $body = $req->body();
+        $id = bin2hex(random_bytes(8));
 
         $this->model->create([
             "data" => [
+                "id" => $id,
                 "name" => $body["name"],
                 "email" => $body["email"],
                 "password" => Hash::hash($body["password"]),
             ]
         ]);
 
+        $token = JWT::generate(["userId"=>$id],$_ENV["JWT_SECRET_KEY"]);
+
         $res->status(StatusCodes::CREATED)->json(
             [
                 "success" => true,
-                "message" => "User created successfully"
+                "data" => [
+                    "name" => $body["name"],
+                    "token" => $token,
+                ]
             ]
         );
     }
@@ -49,10 +57,18 @@ class UserController
 
         $is_correct_password = Hash::compare($body["password"], $user["password"]);
 
-        if ($is_correct_password) $res->status(StatusCodes::OK)->json([
-            "success" => true,
-            "message" => "User logged in"
-        ]);
+        if ($is_correct_password) {
+
+            $token = JWT::generate(["userId"=>$user["id"]],$_ENV["JWT_SECRET_KEY"]);
+
+            $res->status(StatusCodes::OK)->json([
+                "success" => true,
+                "data" => [
+                    "name" => $user["name"],
+                    "token" => $token,
+                ]
+            ]);
+        }
 
         $res->status(StatusCodes::BAD_REQUEST)->json([
             "success" => false,
