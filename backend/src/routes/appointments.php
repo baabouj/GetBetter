@@ -9,7 +9,7 @@ $router->route("/schedule")
     ->apply(\app\middlewares\AuthMiddleware::class, \app\middlewares\ScheduleAppointmentMiddleware::class);
 
 $router->route("/cancel")
-    ->post([\app\controllers\AppointmentsController::class, "cancel"])
+    ->delete([\app\controllers\AppointmentsController::class, "cancel"])
     ->apply(\app\middlewares\AuthMiddleware::class, \app\middlewares\CancelAppointmentMiddleware::class);
 
 
