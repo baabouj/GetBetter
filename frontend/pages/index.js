@@ -9,10 +9,11 @@ import {
   IoCalendar,
   IoMedkit,
   IoMedicalOutline,
-  IoArrowForwardOutline,
   IoHeartOutline,
 } from "react-icons/io5";
+
 import { RiBodyScanLine, RiShieldCheckLine, RiTimeLine } from "react-icons/ri";
+import Card from "../components/Card";
 
 export default function Home() {
   return (
@@ -174,102 +175,36 @@ export default function Home() {
           </p> */}
         </div>
         <div className="grid grid-cols-3 gap-6 mt-2">
-          <div className="p-4 shadow rounded-3xl hover:bg-primary hover:cursor-pointer transition-all duration-500 group">
-            <div className="flex items-center justify-center text-primary p-2 group-hover:text-surface transition-all duration-500">
-              <IoMedicalOutline className="text-6xl" />
-              <h2 className="font-poppins font-semibold text-2xl px-2">
-                Primary Care
-              </h2>
-            </div>
-            <p className="font-poppins font-medium text-lg text-gray-500 p-2 group-hover:text-gray-200 transition-all duration-500">
-              Our certified doctors provide best medical care to help keep you
-              healthy.
-            </p>
-            <div className="flex items-center text-primary group-hover:text-surface transition-all duration-500">
-              <p className="font-poppins font-medium text-lg p-2">Learn more</p>
-              <IoArrowForwardOutline className="text-xl" />
-            </div>
-          </div>
-          <div className="p-4 shadow rounded-3xl hover:bg-primary hover:cursor-pointer transition-all duration-500 group">
-            <div className="flex items-center justify-center text-primary p-2 group-hover:text-surface transition-all duration-500">
-              <IoHeartOutline className="text-6xl" />
-              <h2 className="font-poppins font-semibold text-2xl px-2">
-                Heart Care
-              </h2>
-            </div>
-            <p className="font-poppins font-medium text-lg text-gray-500 p-2 group-hover:text-gray-200 transition-all duration-500">
-              The most advanced doctors and facility heart care in the region
-              happen to be GetBetter.
-            </p>
-            <div className="flex items-center text-primary group-hover:text-surface transition-all duration-500">
-              <p className="font-poppins font-medium text-lg p-2">Learn more</p>
-              <IoArrowForwardOutline className="text-xl" />
-            </div>
-          </div>
-          <div className="p-4 shadow rounded-3xl hover:bg-primary hover:cursor-pointer transition-all duration-500 group">
-            <div className="flex items-center justify-center text-primary p-2 group-hover:text-surface transition-all duration-500">
-              <IoMedicalOutline className="text-6xl" />
-              <h2 className="font-poppins font-semibold text-2xl px-2">
-                Primary Care
-              </h2>
-            </div>
-            <p className="font-poppins font-medium text-lg text-gray-500 p-2 group-hover:text-gray-200 transition-all duration-500">
-              Our certified doctors provide best medical care to help keep you
-              healthy.
-            </p>
-            <div className="flex items-center text-primary group-hover:text-surface transition-all duration-500">
-              <p className="font-poppins font-medium text-lg p-2">Learn more</p>
-              <IoArrowForwardOutline className="text-xl" />
-            </div>
-          </div>
-          <div className="p-4 shadow rounded-3xl hover:bg-primary hover:cursor-pointer transition-all duration-500 group">
-            <div className="flex items-center justify-center text-primary p-2 group-hover:text-surface transition-all duration-500">
-              <IoMedicalOutline className="text-6xl" />
-              <h2 className="font-poppins font-semibold text-2xl px-2">
-                Primary Care
-              </h2>
-            </div>
-            <p className="font-poppins font-medium text-lg text-gray-500 p-2 group-hover:text-gray-200 transition-all duration-500">
-              Our certified doctors provide best medical care to help keep you
-              healthy.
-            </p>
-            <div className="flex items-center text-primary group-hover:text-surface transition-all duration-500">
-              <p className="font-poppins font-medium text-lg p-2">Learn more</p>
-              <IoArrowForwardOutline className="text-xl" />
-            </div>
-          </div>
-          <div className="p-4 shadow rounded-3xl hover:bg-primary hover:cursor-pointer transition-all duration-500 group">
-            <div className="flex items-center justify-center text-primary p-2 group-hover:text-surface transition-all duration-500">
-              <IoMedicalOutline className="text-6xl" />
-              <h2 className="font-poppins font-semibold text-2xl px-2">
-                Primary Care
-              </h2>
-            </div>
-            <p className="font-poppins font-medium text-lg text-gray-500 p-2 group-hover:text-gray-200 transition-all duration-500">
-              Our certified doctors provide best medical care to help keep you
-              healthy.
-            </p>
-            <div className="flex items-center text-primary group-hover:text-surface transition-all duration-500">
-              <p className="font-poppins font-medium text-lg p-2">Learn more</p>
-              <IoArrowForwardOutline className="text-xl" />
-            </div>
-          </div>
-          <div className="p-4 shadow rounded-3xl hover:bg-primary hover:cursor-pointer transition-all duration-500 group">
-            <div className="flex items-center justify-center text-primary p-2 group-hover:text-surface transition-all duration-500">
-              <IoMedicalOutline className="text-6xl" />
-              <h2 className="font-poppins font-semibold text-2xl px-2">
-                Primary Care
-              </h2>
-            </div>
-            <p className="font-poppins font-medium text-lg text-gray-500 p-2 group-hover:text-gray-200 transition-all duration-500">
-              Our certified doctors provide best medical care to help keep you
-              healthy.
-            </p>
-            <div className="flex items-center text-primary group-hover:text-surface transition-all duration-500">
-              <p className="font-poppins font-medium text-lg p-2">Learn more</p>
-              <IoArrowForwardOutline className="text-xl" />
-            </div>
-          </div>
+          <Card
+            service="Primary Care"
+            description="Our certified doctors provide best medical care to help keep you healthy."
+            Icon={IoMedicalOutline}
+          />
+          <Card
+            service="Heart Care"
+            description="The most advanced doctors and facility heart care in the region happen to be GetBetter."
+            Icon={IoHeartOutline}
+          />
+          <Card
+            service="Primary Care"
+            description="Our certified doctors provide best medical care to help keep you healthy."
+            Icon={IoMedicalOutline}
+          />
+          <Card
+            service="Heart Care"
+            description="The most advanced doctors and facility heart care in the region happen to be GetBetter."
+            Icon={IoHeartOutline}
+          />
+          <Card
+            service="Primary Care"
+            description="Our certified doctors provide best medical care to help keep you healthy."
+            Icon={IoMedicalOutline}
+          />
+          <Card
+            service="Heart Care"
+            description="The most advanced doctors and facility heart care in the region happen to be GetBetter."
+            Icon={IoHeartOutline}
+          />
         </div>
       </div>
     </Layout>
