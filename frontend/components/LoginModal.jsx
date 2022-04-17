@@ -11,6 +11,8 @@ export default function LoginModal({ visible, onClose, onLinkClicked }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [errors, setErrors] = useState({ email: "", password: "" });
+
   const [_, setUser] = useUser();
 
   const onSubmit = async (e) => {
@@ -33,6 +35,8 @@ export default function LoginModal({ visible, onClose, onLinkClicked }) {
           isLoggedIn: true,
         });
         onClose();
+      } else {
+        setErrors((oldErrors) => ({ ...oldErrors, ...res.errors }));
       }
     } catch (error) {
       console.log(error);
@@ -62,11 +66,13 @@ export default function LoginModal({ visible, onClose, onLinkClicked }) {
             placeholder="Enter email address"
             type="email"
             onChange={({ target: { value } }) => setEmail(value)}
+            error={errors.email}
           />
           <Input
             placeholder="Enter password"
             type="password"
             onChange={({ target: { value } }) => setPassword(value)}
+            error={errors.password}
           />
           <button
             type="submit"

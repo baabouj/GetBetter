@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function Input({ error, ...rest }) {
   return (
     <div className="my-2">

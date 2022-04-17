@@ -11,6 +11,7 @@ export default function SignupModal({ visible, onClose, onLinkClicked }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [errors, setErrors] = useState({ name: "", email: "", password: "" });
   const [_, setUser] = useUser();
 
   const onSubmit = async (e) => {
@@ -33,6 +34,8 @@ export default function SignupModal({ visible, onClose, onLinkClicked }) {
           isLoggedIn: true,
         });
         onClose();
+      } else {
+        setErrors((oldErrors) => ({ ...oldErrors, ...res.errors }));
       }
     } catch (error) {
       console.log(error);
@@ -62,16 +65,19 @@ export default function SignupModal({ visible, onClose, onLinkClicked }) {
             placeholder="Enter full name"
             type="text"
             onChange={({ target: { value } }) => setName(value)}
+            error={errors.name}
           />
           <Input
             placeholder="Enter email address"
             type="email"
             onChange={({ target: { value } }) => setEmail(value)}
+            error={errors.email}
           />
           <Input
             placeholder="Enter password"
             type="password"
             onChange={({ target: { value } }) => setPassword(value)}
+            error={errors.password}
           />
           <button
             type="submit"
