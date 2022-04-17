@@ -21,7 +21,6 @@ export default function Schedule() {
   const fetchScheduledAppointments = async () => {
     let res = await fetch(`http://localhost:8080/appointments?day=${day}`);
     res = await res.json();
-    console.log(res);
     setScheduledAppointments(res.data.map((appointment) => appointment.date));
   };
 
@@ -36,8 +35,10 @@ export default function Schedule() {
         method: "POST",
         body: JSON.stringify({
           date,
-          token: sessionStorage.getItem("token"),
         }),
+        headers: {
+          Authorization: "Bearer " + sessionStorage.getItem("token"),
+        },
       });
       res = await res.json();
       if (res.success) {
