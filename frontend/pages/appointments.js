@@ -39,7 +39,7 @@ export default function Appointments() {
   const fetchAppointments = async () => {
     let res = await fetch("http://localhost:8080/user/appointments", {
       headers: {
-        Authorization: "",
+        Authorization: "Bearer " + sessionStorage.getItem("token"),
       },
     });
     res = await res.json();
