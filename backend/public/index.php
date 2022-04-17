@@ -12,7 +12,9 @@ $dotenv->load();
 require_once ROOT_DIR . "/src/app.php";
 
 $app->cors([
-    "origin" => "http://localhost:3000"
+    "origin" => "http://localhost:3000",
+    "headers" => ["Authorization"],
+    "methods" => ["GET", "POST", "DELETE"]
 ]);
 
 // initializing the app
