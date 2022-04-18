@@ -60,12 +60,12 @@ export default function Appointments() {
 
   return (
     <Layout>
-      <h1 className="text-3xl text-dark font-poppins font-semibold py-8">
+      <h1 className="text-3xl text-dark text-center md:text-left font-poppins font-semibold py-8">
         My Appointments
       </h1>
-      <div className="min-h-[50vh]">
+      <div className="md:min-h-[50vh]">
         {appointments?.length ? (
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4">
             {appointments.map(({ id, day, time }, idx) => (
               <div
                 key={idx}

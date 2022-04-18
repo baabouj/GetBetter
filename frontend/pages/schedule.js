@@ -53,34 +53,39 @@ export default function Schedule() {
 
   return (
     <Layout>
-      <div className="flex mt-8">
-        <Calendar
-          selectedDay={day}
-          onSelect={(day) => setDay(day)}
-          minDay={today}
-        />
-        <div className="flex flex-col justify-between w-full my-4">
-          <h1 className="text-2xl text-dark font-poppins font-semibold capitalize text-center">
-            Make an appointment
-          </h1>
-          <TimePicker
-            pickedTime={time}
-            onPick={(time) => setTime(time)}
-            disabled={(time) =>
-              scheduledAppointments?.includes(`${day} ${time}`)
-            }
+      <div className="flex flex-col mt-8">
+        <h1 className="text-2xl text-dark font-poppins font-semibold capitalize text-center md:hidden mb-8">
+          Make an appointment
+        </h1>
+        <div className="flex flex-col md:flex-row w-full">
+          <Calendar
+            selectedDay={day}
+            onSelect={(day) => setDay(day)}
+            minDay={today}
           />
-          <button
-            onClick={schedule}
-            className="self-center w-fit mb-4 rounded-lg font-poppins font-medium bg-primary text-gray-100 shadow py-4 px-6 capitalize"
-          >
-            schedule appointment
-          </button>
-          <Toaster
-            toastOptions={{
-              className: "bg-black",
-            }}
-          />
+          <div className="flex flex-col justify-between w-full my-4">
+            <h1 className="text-2xl text-dark font-poppins font-semibold capitalize text-center md:block hidden">
+              Make an appointment
+            </h1>
+            <TimePicker
+              pickedTime={time}
+              onPick={(time) => setTime(time)}
+              disabled={(time) =>
+                scheduledAppointments?.includes(`${day} ${time}`)
+              }
+            />
+            <button
+              onClick={schedule}
+              className="self-center w-fit my-4 md:mt-0 rounded-lg font-poppins font-medium bg-primary text-gray-100 shadow py-4 px-6 capitalize"
+            >
+              schedule appointment
+            </button>
+            <Toaster
+              toastOptions={{
+                className: "bg-black",
+              }}
+            />
+          </div>
         </div>
       </div>
     </Layout>

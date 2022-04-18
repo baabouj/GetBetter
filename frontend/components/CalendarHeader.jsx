@@ -7,8 +7,11 @@ const CalendarHeader = ({ day, changeMonth }) => {
   const weekdayshort = moment.weekdaysShort();
   let weekdayshortname = weekdayshort.map((day) => {
     return (
-      <div key={day} className="flex flex-col justify-center items-center p-2">
-        <h2 className="uppercase text-lg text-dark/80 font-poppins mx-2 p-2">
+      <div
+        key={day}
+        className="flex flex-col justify-center items-center w-12 h-12 p-2 md:w-full md:h-full"
+      >
+        <h2 className="uppercase text-lg text-dark/80 font-poppins p-2 m-2 md:my-0">
           {day.charAt(0)}
         </h2>
       </div>
@@ -27,7 +30,7 @@ const CalendarHeader = ({ day, changeMonth }) => {
           <IoChevronForward className="text-lg" />
         </button>
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between md:items-center">
         {weekdayshortname}
       </div>
     </div>

@@ -26,10 +26,10 @@ const Calendar = ({ onSelect, selectedDay, minDay }) => {
     }
   };
 
-  const Item = ({ data }) => {
+  const Week = ({ week }) => {
     return (
       <div className="grid grid-cols-7">
-        {data?.map((day, i) => {
+        {week?.map((day, i) => {
           const dayNumber = moment(day).format("DD");
           const isToday = day == moment().format("YYYY-MM-DD");
 
@@ -63,15 +63,15 @@ const Calendar = ({ onSelect, selectedDay, minDay }) => {
     );
   };
 
-  const renderItem = () =>
-    data.map((item, i) => <Item data={item} key={`${Math.round()}-${i}`} />);
+  const renderWeeks = () =>
+    data.map((week, i) => <Week week={week} key={`${Math.round()}-${i}`} />);
 
   if (!data.length) return null;
 
   return (
     <div className="flex flex-col">
       <CalendarHeader day={dayOfMonth} changeMonth={changeMonth} />
-      {renderItem()}
+      {renderWeeks()}
     </div>
   );
 };

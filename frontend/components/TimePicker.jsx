@@ -13,7 +13,7 @@ export default function TimePicker({ pickedTime, onPick, disabled }) {
     "18:00",
   ];
   return (
-    <div className="grid grid-cols-4 gap-4 place-content-center ml-8">
+    <div className="grid grid-cols-4 gap-2 md:gap-4 place-content-center md:ml-8">
       {times.map((time) => (
         <TimeBox
           key={time}

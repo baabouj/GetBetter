@@ -2,7 +2,7 @@ import NavLink from "./NavLink";
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-center">
+    <nav className="hidden lg:flex items-center justify-center">
       <ul className="mx-16 flex items-center justify-center">
         <NavLink to="#" name="Home" />
         <NavLink to="#about" name="About" />

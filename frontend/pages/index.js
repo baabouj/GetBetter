@@ -20,21 +20,17 @@ export default function Home() {
     <Layout>
       <Container>
         <main className="flex flex-col">
-          <div className="flex my-4">
-            <h1 className="font-poppins text-6xl font-semibold capitalize text-dark my-2 leading-tight">
+          <div className="flex flex-col md:flex-row my-4">
+            <h1 className="font-poppins text-4xl md:text-6xl text-center md:text-left font-semibold capitalize text-dark my-2 leading-tight">
               We care about your <span className="text-primary">health</span>
             </h1>
-            <p className="font-poppins text-lg font-medium text-gray-500 my-2 self-end">
+            <p className="font-poppins text-center md:text-left text-lg font-medium text-gray-500 my-2 self-end">
               Check how your health is by professional team doctor with complete
               and modern facilities services.
             </p>
-            {/* <p className="font-poppins text-xl font-regular text-gray-500 my-2 self-end">
-            Good health is a state of mental, physical and social well being and
-            it does not just mean the absence of desease!.
-          </p> */}
           </div>
-          <div className="flex justify-between">
-            <div className="flex flex-col">
+          <div className="flex flex-col md:flex-row justify-between">
+            <div className="flex flex-col items-center md:items-stretch">
               <h3 className="text-poppins text-primary font-semibold text-2xl my-4">
                 Our Advantages
               </h3>
@@ -64,11 +60,8 @@ export default function Home() {
                   <p className="font-poppins p-4">immunizations</p>
                 </div>
               </div>
-              {/* <button className="w-fit rounded-full font-poppins font-medium bg-blue-400 py-3 px-4 my-2 text-gray-100 hover:bg-blue-500 transition-all">
-              Book an appointment
-            </button> */}
             </div>
-            <div className="relative">
+            <div className="hidden relative sm:block">
               <Image
                 className="object-fill z-10"
                 src="/doctors.jpg"
@@ -76,42 +69,14 @@ export default function Home() {
                 width={700}
                 height={400}
               />
-              {/* <div className="absolute bottom-0 right-0 bg-primary z-20 rounded">
-              <div className="flex">
-                <div className="flex items-center text-surface p-4">
-                  <div className="text-xl p-1">
-                    <IoCall />
-                  </div>
-                  <p className="text-poppins font-medium text-lg">
-                    123 456 789
-                  </p>
-                </div>
-                <div className="flex items-center text-surface p-4">
-                  <div className="text-xl p-1">
-                    <IoMail />
-                  </div>
-                  <p className="text-poppins font-medium text-lg">
-                    get@better.com
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center text-surface p-4">
-                <div className="text-xl p-1">
-                  <IoLocationSharp />
-                </div>
-                <p className="text-poppins font-medium text-lg">
-                  23 Somewhere Street, Safi
-                </p>
-              </div>
-            </div> */}
-              <div className="absolute top-0 right-0 -m-2 bg-primary/50 z-0 w-[700px] h-[400px]" />
+              <div className="absolute top-0 right-0 -m-2 bg-primary/50 z-0 w-[700px] h-[400px] hidden lg:block" />
             </div>
           </div>
         </main>
       </Container>
       <Container>
         <div className="flex justify-between items-center h-full">
-          <div className="flex w-1/2 h-full relative z-40">
+          <div className="hidden w-1/2 h-full relative z-40 md:flex">
             <Image
               className="object-fill z-10"
               alt=""
@@ -122,15 +87,15 @@ export default function Home() {
 
             <div className="absolute top-0 right-0 -m-2 bg-primary/50 z-0 w-full h-full" />
           </div>
-          <div className="flex flex-col justify-center w-1/2 h-full p-8 mx-4">
-            <h3 className="text-xl text-primary font-poppins font-medium">
+          <div className="flex flex-col justify-center items-center md:items-stretch md:w-1/2 h-full py-8 md:p-8 mx-4">
+            <h3 className="text-xl text-primary text-center md:text-left font-poppins font-medium">
               Quick Solution
             </h3>
-            <h3 className="text-3xl text-dark font-poppins font-semibold py-2">
+            <h3 className="text-3xl text-center md:text-left text-dark font-poppins font-semibold py-2">
               Easy <span className="text-primary">Same</span> or Next-day
               Appointments
             </h3>
-            <p className="font-poppins font-medium text-dark/60 py-4">
+            <p className="font-poppins font-medium text-lg text-center md:text-left text-gray-500 py-4">
               Easily make appointment with our best doctos for you in same or
               the next day
             </p>
@@ -155,26 +120,22 @@ export default function Home() {
         </div>
       </Container>
       <div className="flex flex-col justify-center h-full my-8">
-        <div className="flex my-4">
+        <div className="flex flex-col md:flex-row my-4">
           <div className="my-4">
-            <h3 className="text-xl text-primary font-poppins font-medium">
+            <h3 className="text-xl text-center md:text-left text-primary font-poppins font-medium">
               Our Services
             </h3>
-            <h1 className="font-poppins text-3xl font-semibold text-dark my-2 leading-tight capitalize">
+            <h1 className="font-poppins text-center md:text-left text-3xl font-semibold text-dark my-2 leading-tight capitalize">
               The best quality services for your
               <span className="text-primary"> health</span>
             </h1>
           </div>
-          <p className="font-poppins text-lg font-medium text-gray-500 my-2 self-end">
+          <p className="font-poppins text-center md:text-left text-lg font-medium text-gray-500 my-2 self-end">
             Our best team doctors with complete and modern facilities will keep
             you healthy or return you to health from sick.
           </p>
-          {/* <p className="font-poppins text-xl font-regular text-gray-500 my-2 self-end">
-            Good health is a state of mental, physical and social well being and
-            it does not just mean the absence of desease!.
-          </p> */}
         </div>
-        <div className="grid grid-cols-3 gap-6 mt-2">
+        <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-6 mt-2">
           <Card
             service="Primary Care"
             description="Our certified doctors provide best medical care to help keep you healthy."

@@ -3,8 +3,8 @@ export default function Footer() {
     <footer className="text-dark/80 pt-5 mt-4 font-poppins">
       <div className="gap-6 justify-between md:flex">
         <div className="flex-1">
-          <div className="max-w-xs">
-            <h1 className="font-poppins text-2xl font-medium text-primary w-32">
+          <div className="sm:max-w-xs w-full text-center sm:text-left">
+            <h1 className="font-poppins text-2xl font-medium text-primary sm:w-32 w-full">
               GetBetter
             </h1>
             <p className="leading-relaxed my-2 text-[15px]">
@@ -12,27 +12,27 @@ export default function Footer() {
               experience.
             </p>
           </div>
-          <div className="max-w-sm flex flex-col justify-center py-2">
+          <div className="sm:max-w-sm w-full text-center sm:text-left flex flex-col justify-center py-2">
             <p className="">Call Center (123) 456 789</p>
             <p className="">Chat Center (123) 456 789</p>
           </div>
         </div>
         <div className="flex-1 mt-10 px-4 space-y-6 items-center justify-between sm:flex md:space-y-0 md:mt-0">
-          <ul className="space-y-4">
+          <ul className="space-y-4 flex flex-col items-center sm:items-stretch">
             <h4 className="text-gray-800 font-medium">About</h4>
             <li className="hover:cursor-pointer">Partners</li>
             <li className="hover:cursor-pointer">Careers</li>
             <li className="hover:cursor-pointer">Press</li>
             <li className="hover:cursor-pointer">Community</li>
           </ul>
-          <ul className="space-y-4">
+          <ul className="space-y-4 flex flex-col items-center sm:items-stretch">
             <h4 className="text-gray-800 font-medium">Treatment</h4>
             <li className="hover:cursor-pointer">Primary Care</li>
             <li className="hover:cursor-pointer">Health Care</li>
             <li className="hover:cursor-pointer">Primary Care</li>
             <li className="hover:cursor-pointer">Primary Care</li>
           </ul>
-          <ul className="space-y-4">
+          <ul className="space-y-4 flex flex-col items-center sm:items-stretch">
             <h4 className="text-gray-800 font-medium">Links</h4>
             <li className="hover:cursor-pointer">Home</li>
             <li className="hover:cursor-pointer">About</li>
@@ -41,12 +41,12 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="mt-8 py-6 border-t items-center justify-between sm:flex">
+      <div className="mt-8 py-6 border-t text-center md:text-left items-center justify-between sm:flex">
         <div className="mt-4 sm:mt-0">
           &copy; 2022 GetBetter All rights reserved.
         </div>
         <div className="mt-6 sm:mt-0">
-          <ul className="flex items-center space-x-4">
+          <ul className="flex items-center justify-center space-x-4">
             <li className="w-10 h-10 border rounded-full flex items-center justify-center hover:cursor-pointer">
               <svg
                 className="svg-icon w-6 h-6 text-blue-400"

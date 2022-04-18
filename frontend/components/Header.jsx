@@ -24,12 +24,12 @@ export default function Header() {
   });
 
   return (
-    <header className="flex justify-between items-center">
+    <header className="flex flex-col md:flex-row justify-between items-center">
       <h1 className="font-poppins text-2xl font-medium text-primary">
         <Link href="/">GetBetter</Link>
       </h1>
       <Navbar />
-      <div className="flex">
+      <div className="flex my-3">
         {user.isLoggedIn ? (
           <div className="flex item-center">
             <p className="mx-4 p-1 font-poppins font-medium text-gray-800 border-b-2 border-transparent  hover:border-b-2 hover:border-primary transition-all">
